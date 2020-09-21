@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-news',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  news : any = [];
+
+  constructor(public data: DataService) { }
 
   ngOnInit(): void {
+
+    this.getNews();
+  }
+
+  getNews() {
+    this.news = [];
+    this.data.getNews().subscribe((data: {}) => {
+      this.news = data['articles'];
+      console.log(this.news);
+    })
   }
 
 }
