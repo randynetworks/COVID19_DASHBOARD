@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
-import { ActivatedRoute, Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-news',
