@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NationalComponent } from './national/national.component';
-import { NewsComponent } from './news/news.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/news',
+    redirectTo: '/national',
     pathMatch: 'full'
-  },
-  {
-    path: 'news',
-    component: NewsComponent
   },
   {
     path: 'national',
