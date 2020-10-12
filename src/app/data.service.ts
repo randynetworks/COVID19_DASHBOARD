@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 // import { catchError } from 'rxjs/operators';
 
-const covid = 'https://covid19.mathdro.id/api/';
+const covid = 'https://api.kawalcorona.com/';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class DataService {
 
   // api getAllCovid
   getCovidAll(): Observable<any> {
-    return this.http.get(covid + 'countries/Indonesia');
+    return this.http.get(covid + 'indonesia');
   }
 
 }
