@@ -35,7 +35,7 @@ export class NationalComponent implements OnInit {
         datasets: [
           {
             label: '# of Votes',
-            data: [723, 1929, 5229, 7585, 5251, 1842],
+            data: this.listUmur,
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -165,7 +165,6 @@ export class NationalComponent implements OnInit {
 
   // data umur
   getDataUmur() {
-    this.listUmur = [];
     this.data.getCovidAll().subscribe((data: {}) => {
       for (let i = 0; i <= 5; i++) {
         this.listUmur.push(
