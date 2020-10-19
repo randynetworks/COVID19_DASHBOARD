@@ -58,13 +58,7 @@ export class NationalComponent implements OnInit {
       },
       options: {
         scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
+          
         },
       },
     });
