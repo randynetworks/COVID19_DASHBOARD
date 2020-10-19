@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ForOforComponent } from './for-ofor/for-ofor.component';
 import { NationalComponent } from './national/national.component';
 
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'national',
     component: NationalComponent
+  },
+  {
+    path: '**',
+    component: ForOforComponent
   }
 ];
 

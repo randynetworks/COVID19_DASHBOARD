@@ -8,12 +8,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NationalComponent } from './national/national.component';
 import { NewsComponent } from './news/news.component';
+import { ForOforComponent } from './for-ofor/for-ofor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NationalComponent,
-    NewsComponent
+    NewsComponent,
+    ForOforComponent
   ],
   imports: [
     HttpClientModule,

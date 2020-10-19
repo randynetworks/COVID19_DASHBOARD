@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target" : "https://api.kawalcorona.com/",
+    "secure":false
+  }
+}
