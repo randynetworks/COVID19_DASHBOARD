@@ -29,7 +29,7 @@ export class NationalComponent implements OnInit {
   ngOnInit(): void {
     // chart
     var myChart = new Chart('oldChart', {
-      type: 'doughnut',
+      type: 'pie',
       data: {
         labels: ['0 -5', '6 - 18', '19 - 30', '31 - 45', '46 - 59', '> 59'],
         datasets: [
@@ -57,9 +57,6 @@ export class NationalComponent implements OnInit {
         ],
       },
       options: {
-        scales: {
-          
-        },
       },
     });
 
