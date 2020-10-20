@@ -24,12 +24,15 @@ export class NationalComponent implements OnInit {
   // Data umur
   listUmur: any = [];
 
+  // data gender
+  listGender: any = [];
+
   constructor(public data: DataService) {}
 
   ngOnInit(): void {
     // chart
     var myChart = new Chart('oldChart', {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: ['0 -5', '6 - 18', '19 - 30', '31 - 45', '46 - 59', '> 59'],
         datasets: [
@@ -60,6 +63,30 @@ export class NationalComponent implements OnInit {
       },
     });
 
+    var myChart2 = new Chart('jkChart', {
+      type: 'doughnut',
+      data: {
+        labels: ['Laki-Laki', 'Perempuan'],
+        datasets: [
+          {
+            label: '# of Votes',
+            data: this.listGender,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+      },
+    });
+
     this.getDataupdateCovid();
 
     // STATISTIK
@@ -75,6 +102,8 @@ export class NationalComponent implements OnInit {
 
     // data
     this.getDataUmur();
+    this.getDataGender();
+
   }
 
   comma(x) {
@@ -164,5 +193,17 @@ export class NationalComponent implements OnInit {
       }
     });
     console.log(this.listUmur);
+  }
+
+  // data Gender
+  getDataGender() {
+    this.data.getCovidAll().subscribe((data: {}) => {
+      for (let i = 0; i <= 1; i++) {
+        this.listGender.push(
+          data['list_data'][2]['jenis_kelamin'][i]['doc_count']
+        );
+      }
+    });
+    console.log(this.listGender);
   }
 }
