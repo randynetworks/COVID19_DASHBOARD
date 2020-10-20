@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Chart } from 'node_modules/chart.js';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-national',
@@ -8,6 +9,7 @@ import { Chart } from 'node_modules/chart.js';
   styleUrls: ['./national.component.css'],
 })
 export class NationalComponent implements OnInit {
+  title = 'Dashboard Covid-19 By Ayoboga Education';
   updateCovid: any;
 
   // statistik
@@ -27,9 +29,20 @@ export class NationalComponent implements OnInit {
   // data gender
   listGender: any = [];
 
-  constructor(public data: DataService) {}
+  constructor(
+    public data: DataService,
+    private titleService: Title,
+    private metaService: Meta
+  ) {}
 
   ngOnInit(): void {
+    //SEO
+    this.titleService.setTitle(this.title);
+    this.metaService.addTags([
+      { name: 'keywords', content: 'Dashboard Covid-19 By Ayoboga Education' },
+      { name: 'description', content: 'Dashboard Covid-19 By Ayoboga Education (Experiment Only)' },
+      { name: 'robots', content: 'Covid,pandemic' }
+    ]);
     // chart
     var myChart = new Chart('oldChart', {
       type: 'doughnut',
@@ -59,8 +72,7 @@ export class NationalComponent implements OnInit {
           },
         ],
       },
-      options: {
-      },
+      options: {},
     });
 
     var myChart2 = new Chart('jkChart', {
@@ -75,16 +87,12 @@ export class NationalComponent implements OnInit {
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
             ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-            ],
+            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
             borderWidth: 1,
           },
         ],
       },
-      options: {
-      },
+      options: {},
     });
 
     this.getDataupdateCovid();
@@ -103,7 +111,6 @@ export class NationalComponent implements OnInit {
     // data
     this.getDataUmur();
     this.getDataGender();
-
   }
 
   comma(x) {
