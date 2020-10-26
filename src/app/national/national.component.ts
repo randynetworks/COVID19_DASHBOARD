@@ -224,10 +224,10 @@ export class NationalComponent implements OnInit {
     console.log("Fungsi prosesPerhitungan() dipanggil");
 
     // memilih nilai dari id input-j (Jumlah total ranjang di rumah sakit)
-    var j = document.getElementById("input-j").value;
 
+    var j: any = (<HTMLInputElement>document.getElementById("input-j")).value;
     // memilih nilai dari id input-t (Jumlah total ranjang di rumah sakit yang terisi)
-    var t = document.getElementById("input-t").value;
+    var t: any = (<HTMLInputElement>document.getElementById("input-t")).value;
 
     // Buat formula untuk menghitung persentase keterisian ranjang (ptj) !
     // Persentase keterisian ranjang = ranjang yang terisi dibagi dengan total ranjang
