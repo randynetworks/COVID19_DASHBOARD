@@ -9,6 +9,8 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./national.component.css'],
 })
 export class NationalComponent implements OnInit {
+
+
   title = 'Dashboard Covid-19 By Ayoboga Education';
   updateCovid: any;
 
@@ -111,6 +113,8 @@ export class NationalComponent implements OnInit {
     // data
     this.getDataUmur();
     this.getDataGender();
+
+    this.prosesPerhitungan();
   }
 
   comma(x) {
@@ -199,7 +203,7 @@ export class NationalComponent implements OnInit {
         );
       }
     });
-    console.log(this.listUmur);
+    // console.log(this.listUmur);
   }
 
   // data Gender
@@ -211,6 +215,45 @@ export class NationalComponent implements OnInit {
         );
       }
     });
-    console.log(this.listGender);
+    // console.log(this.listGender);
+  }
+
+  //   Membuat function prosesPerhitungan
+  prosesPerhitungan() {
+    // menampilkan string di console
+    console.log("Fungsi prosesPerhitungan() dipanggil");
+
+    // memilih nilai dari id input-j (Jumlah total ranjang di rumah sakit)
+    var j = document.getElementById("input-j").value;
+
+    // memilih nilai dari id input-t (Jumlah total ranjang di rumah sakit yang terisi)
+    var t = document.getElementById("input-t").value;
+
+    // Buat formula untuk menghitung persentase keterisian ranjang (ptj) !
+    // Persentase keterisian ranjang = ranjang yang terisi dibagi dengan total ranjang
+
+    var ptj = t / j;
+
+    // menampilkan text melalui output-ptj
+    document.getElementById("output-ptj").textContent =
+      ptj + " %";
+
+    /*
+            Buat formula untuk menampilkan kondisi keterisian ranjang (k)
+            Jika dibawah 30%, kondisi = AMAN
+            Jika 30% - 70%, kondisi = WASPADA
+            Jika diatas 70%, kondisi = DARURAT
+          */
+    var k = "";
+    if (ptj <= 0.3) {
+      k = "AMAN";
+    } else if (ptj <= 0.7) {
+      k = "WASPADA";
+    } else if (ptj > 0.7) {
+      k = "DARURAT";
+    }
+
+    // menampilkan ketersediaan ranjang (k) melalui it output-k
+    document.getElementById("output-k").textContent = k;
   }
 }

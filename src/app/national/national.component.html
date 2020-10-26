@@ -93,6 +93,67 @@
     </div>
 
     <div class="row justify-content-center">
+      <h4 class="mt-3 text-center">
+        Presentase Keterisian Ranjang <br />di Rumah Sakit Ketika Covid-19
+      </h4>
+      <div class="col-xl-8 mt-3">
+        <div class="card bg-primary text-white">
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="input-j">Jumlah Total Ranjang dirumah Sakit.</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="input-j"
+                  placeholder="Masukan Totalnya."
+                />
+              </div>
+              <div class="form-group">
+                <label for="input-t"
+                  >Jumlah total ranjang di rumah sakit yang terisi.</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="input-t"
+                  placeholder="Masukan Totalnya."
+                />
+              </div>
+              <input
+                type="button"
+                id="input-button"
+                class="btn btn-success"
+                (click)="prosesPerhitungan()"
+                value="Kalkulasi"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 mt-3">
+        <div class="row">
+          <div class="col-xl-12 mb-3">
+            <div class="card bg-info text-white">
+              <div class="card-body text-center">
+                <h4>Persentase Keterisian</h4>
+                <h5 id="output-ptj"></h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-12 mb-4">
+            <div class="card bg-success text-white">
+              <div class="card-body text-center">
+                <h4>Kondisi</h4>
+                <h5 id="output-k"></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
       <div class="col-xl-6">
         <h4 class="mt-3">Grafik Berdasarkan Umur (Tahun)</h4>
         <div class="card border border-success">
@@ -112,4 +173,3 @@
     </div>
   </div>
 </div>
-
