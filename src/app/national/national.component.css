@@ -1,3 +1,12 @@
 h4 {
   font-weight: bold;
 }
+
+.card-hover-helper{
+  text-decoration: none;
+  color: rgb(46, 46, 46);
+}
+
+.card-hover-helper:hover {
+  background-color: lightgreen;
+}
