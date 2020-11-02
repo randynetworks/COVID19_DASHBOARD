@@ -10,3 +10,12 @@ h4 {
 .card-hover-helper:hover {
   background-color: lightgreen;
 }
+
+td {
+  padding-bottom: 20px;
+  text-decoration: underline;
+}
+
+.icon {
+  color: rgb(46, 46, 46);
+}
