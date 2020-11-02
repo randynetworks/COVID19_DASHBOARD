@@ -19,3 +19,7 @@ td {
 .icon {
   color: rgb(46, 46, 46);
 }
+
+img {
+  max-width: 70%;
+}

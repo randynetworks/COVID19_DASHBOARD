@@ -18,5 +18,4 @@ export class DataService {
     return this.http.get(covid);
   }
 
-
 }

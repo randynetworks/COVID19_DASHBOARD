@@ -31,6 +31,9 @@ export class NationalComponent implements OnInit {
   // data gender
   listGender: any = [];
 
+  // data Rs
+  listRSJabar : any = [];
+
   constructor(
     public data: DataService,
     private titleService: Title,
@@ -217,6 +220,7 @@ export class NationalComponent implements OnInit {
     });
     // console.log(this.listGender);
   }
+
 
   //   Membuat function prosesPerhitungan
   prosesPerhitungan() {
